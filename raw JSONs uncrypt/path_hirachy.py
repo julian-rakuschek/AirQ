@@ -1,4 +1,5 @@
 import os
+from pathlib import Path
 
 def list_directory_hierarchy(root_path, output_file):
     with open(output_file, 'w') as file:
@@ -11,7 +12,7 @@ def list_directory_hierarchy(root_path, output_file):
                 file.write(f"  - File: {filename}\n")
 
 if __name__ == "__main__":
-    root_path = "C:\\Users\\erank\\Documents\\TUG\\PRESENT\\AirQ_Seminarraum\\f08112023\\2023.uncrypt"  # Replace with the directory you want to analyze
+    root_path = str(Path(__file__).parents[0])
     output_file = "directory_hierarchy.txt"
 
     list_directory_hierarchy(root_path, output_file)
